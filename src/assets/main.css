@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme{
+  --font-exo: 'Exo','Exo Fallback';
+ --color-exo-secondary: #6a7282;    
+ --color-my-green:#22C55E
+}
+
+html { scrollbar-gutter: stable; }
+
+.carousel__pagination-button {
+    box-sizing: content-box;
+    padding: max(0px, calc((24px - var(--vc-pgn-height, 4px)) / 2))
+              max(0px, calc((24px - var(--vc-pgn-width, 16px)) / 2));
+    background-clip: content-box;
+  }
+  
+body{
+font-family: "Exo", system-ui, sans-serif;}
+
+@layer components {
+  .circle {
+    @apply w-5 h-5 rounded-full border border-gray-400 flex items-center justify-center transition;
+  }
+
+  .circle-active {
+    @apply bg-my-green border-my-green;
+  }
+
+  .circle-icon {
+    @apply text-white text-[10px] opacity-0 transition;
+  }
+
+  .circle-icon-active {
+    @apply opacity-100;
+  }
+  .fwb-navbar-collapse {
+  background-color: white !important;
+}
+}
+
+@custom-variant dark (&:where(.dark , .dark *));
